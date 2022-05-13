@@ -34,7 +34,7 @@ theme.bg_minimize   = "#444444"
 theme.bg_systray    = theme.bg_normal
 
 theme.wibar_type    = 'dock'
-theme.wibar_border_width    = 0
+theme.wibar_border_width    = 4
 theme.wibar_border_color =   "#000000" .. "00"
 theme.wibar_height  = 32
 -- theme.wibar_width   = 1200

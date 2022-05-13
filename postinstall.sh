@@ -28,9 +28,6 @@ sudo sed -i '/^session    include      system-local-login$/a session    optional
 #env 
 sudo sed -i '$ a QT_QPA_PLATFORMTHEME=qt5ct' /etc/environment
 
-# oh my zsh
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
 # install nvm
 nvm_string="nvm-sh/nvm";
 
@@ -39,8 +36,12 @@ git_latest_version() {
 }
 
 latest_version_number=$(git_latest_version "${nvm_string}");
-#echo ${latest_version_number}
+echo ${latest_version_number}
 wget -qO- https://raw.githubusercontent.com/${nvm_string}/${latest_version_number}/install.sh | bash
+
+
+# oh my zsh
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
 
 cd /home/$USER
@@ -48,12 +49,13 @@ rm -rf .zshrc
 rm -rf .zprofile
 
 cd /home/$USER/gurdotfiles/
-
 stow zsh --adopt
+
+# make zsh the default
+sudo chsh -s /usr/bin/zsh
 
 # enable services
 sudo systemctl enable bluetooth.service
 
-# make zsh the default
-sudo chsh -s /usr/bin/zsh
+
 
