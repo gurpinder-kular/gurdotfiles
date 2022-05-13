@@ -13,12 +13,9 @@ homepath="~/"
 yaypath="/home/"$USER"/yay"
 git clone https://aur.archlinux.org/yay.git $yaypath
 cd $yaypath
-makepkg -si
+yes y | makepkg -si
 
 yes y | yay -S ttf-recursive surfn-icons-git --answerdiff None --answerclean None
-
-# enable services
-sudo systemctl enable bluetooth.service
 
 # fix bluetooth icon
 gsettings set org.blueberry use-symbolic-icons false
@@ -37,12 +34,12 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 # oh my zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-rm -rf ~/.zshrc
-rm -rf ~/.zprofile
-
 cd /home/$USER/gurdotfiles/
 
 stow zsh --adopt
+
+# enable services
+sudo systemctl enable bluetooth.service
 
 # make zsh the default
 sudo chsh -s /usr/bin/zsh
