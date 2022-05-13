@@ -13,7 +13,7 @@ homepath="~/"
 yaypath="/home/"$USER"/yay"
 git clone https://aur.archlinux.org/yay.git $yaypath
 cd $yaypath
-yes y | makepkg -si
+makepkg -si
 
 yes y | yay -S ttf-recursive surfn-icons-git --answerdiff None --answerclean None
 
