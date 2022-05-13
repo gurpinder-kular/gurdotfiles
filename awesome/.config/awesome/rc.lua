@@ -14,9 +14,11 @@ local beautiful = require("beautiful")
 local naughty = require("naughty")
 local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup")
-
+local os = os
 local lain = require("lain")
 local markup = lain.util.markup
+
+local HOMEDIR = os.getenv("HOME")
 
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
@@ -329,7 +331,7 @@ awful.screen.connect_for_each_screen(function(s)
                 --mylauncher,
                 {
                     {
-                        image  = "/home/gurpinder/Pictures/Family/ranger.png",
+                        image  = HOMEDIR .. "/gurdotfiles/ranger.png",
                         resize = true,
                         widget = wibox.widget.imagebox
                     },

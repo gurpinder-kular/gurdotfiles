@@ -1,4 +1,6 @@
 #! /bin/bash
+git branch gurlocalbranch
+git checkout gurlocalbranch
 sudo pacman -Syyu --noconfirm
 echo `##################################`
 echo `Installing TWM env.`
