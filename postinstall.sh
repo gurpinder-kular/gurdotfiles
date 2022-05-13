@@ -5,7 +5,7 @@ echo `Installing TWM env.`
 sudo pacman -S xorg-server xorg-xinit xorg-xclipboard xclip xterm stow lxappearance qt5ct pcmanfm-qt bluez bluez-utils blueberry picom file-roller feh awesome kitty nitrogen playerctl pavucontrol ranger rofi rofi-calc rofi-emoji imagemagick breeze breeze-gtk breeze-icons gnome-keyring libsecret polkit lxqt-policykit network-manager-applet volumeicon libimobiledevice udisks2 ntfs-3g noto-fonts noto-fonts-emoji ttf-hack ttf-fira-sans ttf-fira-code ttf-font-awesome ttf-iosevka-nerd ttf-ibm-plex ttf-input zsh starship go rust python2 --noconfirm
 
 # dot files
-stow */
+stow */ --adopt
 
 homepath="~/"
 yaypath="/home/"$USER"/yay"
@@ -40,7 +40,7 @@ rm -rf ~/.zprofile
 
 cd /home/$USER/gurdotfiles/
 
-stow zsh
+stow zsh --adopt
 
 # make zsh the default
 sudo chsh -s /usr/bin/zsh
