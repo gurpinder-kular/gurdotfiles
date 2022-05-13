@@ -38,6 +38,8 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 rm -rf ~/.zshrc
 rm -rf ~/.zprofile
 
+cd /home/$USER/gurdotfiles/
+
 stow zsh
 
 # make zsh the default
