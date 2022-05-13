@@ -28,9 +28,6 @@ sudo sed -i '/^session    include      system-local-login$/a session    optional
 #env 
 sudo sed -i '$ a QT_QPA_PLATFORMTHEME=qt5ct' /etc/environment
 
-# nvm
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-
 # oh my zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
