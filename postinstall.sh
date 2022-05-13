@@ -13,7 +13,7 @@ git clone https://aur.archlinux.org/yay.git $yaypath
 cd $yaypath
 makepkg -si
 
-yay -S ttf-recursive surfn-icons-git --answerdiff None --answerclean None
+yes y | yay -S ttf-recursive surfn-icons-git --answerdiff None --answerclean None
 
 # enable services
 sudo systemctl enable bluetooth.service
