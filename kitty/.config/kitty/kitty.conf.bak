@@ -1,0 +1,11 @@
+font_family      Input mono
+bold_font        Input mono
+italic_font      Rec Mono Linear
+bold_italic_font Rec Mono Linear
+font_size 12.0
+force_ltr yes
+
+# BEGIN_KITTY_THEME
+# Tokyo Night
+include current-theme.conf
+# END_KITTY_THEME

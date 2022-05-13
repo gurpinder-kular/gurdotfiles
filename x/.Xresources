@@ -1,0 +1,20 @@
+Xft.autohint: 0
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintslight
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
+
+
+xterm*faceName: Monospace
+xterm*faceSize: 13
+xterm*dynamiccolors: true
+xterm*background: black
+xterm*foreground: green
+xterm*colorMode: on
+
+
+
+
+URxvt*faceName: Monospace
+URxvt*faceSize: 12
