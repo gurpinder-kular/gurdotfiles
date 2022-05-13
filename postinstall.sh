@@ -52,7 +52,7 @@ cd /home/$USER/gurdotfiles/
 stow zsh --adopt
 
 # make zsh the default
-sudo chsh -s /usr/bin/zsh
+chsh -s /usr/bin/zsh
 
 # enable services
 sudo systemctl enable bluetooth.service
