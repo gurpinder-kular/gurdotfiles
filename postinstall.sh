@@ -18,6 +18,9 @@ yay ttf-recursive surfn-icons-git
 # enable services
 sudo systemctl enable bluetooth.service
 
+# fix bluetooth icon
+gsettings set org.blueberry use-symbolic-icons false
+
 # keyring 
 sudo sed -i '/^auth       include      system-local-login$/a auth       optional     pam_gnome_keyring.so' /etc/pam.d/login
 sudo sed -i '/^session    include      system-local-login$/a session    optional     pam_gnome_keyring.so auto_start
@@ -28,3 +31,6 @@ sudo sed -i '$ a QT_QPA_PLATFORMTHEME=qt5ct' /etc/environment
 
 # oh my zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+# make zsh the default
+sudo chsh -s /usr/bin/zsh

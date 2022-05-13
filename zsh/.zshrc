@@ -109,15 +109,19 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 
-# znap
-source ~/zsh/plugins/zsh-snap/znap.zsh  # Start Znap
+# Download Znap, if it's not there yet.
+[[ -f ~/Git/zsh-snap/znap.zsh ]] ||
+    git clone --depth 1 -- \
+        https://github.com/marlonrichert/zsh-snap.git ~/Git/zsh-snap
+
+source ~/Git/zsh-snap/znap.zsh  # Start Znap
 
 # `znap prompt` makes your prompt visible in just 15-40ms!
-# znap prompt sindresorhus/pure
-#
-# # `znap source` automatically downloads and starts your plugins.
+znap prompt sindresorhus/pure
+
+# `znap source` automatically downloads and starts your plugins.
 znap source marlonrichert/zsh-autocomplete
-#znap source zsh-users/zsh-autosuggestions
+znap source zsh-users/zsh-autosuggestions
 znap source zsh-users/zsh-syntax-highlighting
 
 # starship
