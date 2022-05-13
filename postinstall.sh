@@ -4,7 +4,7 @@ git checkout gurlocalbranch
 sudo pacman -Syyu --noconfirm
 echo `##################################`
 echo `Installing TWM env.`
-sudo pacman -S xorg-server xorg-xinit xorg-xclipboard xclip xterm stow lxappearance qt5ct pcmanfm-qt bluez bluez-utils blueberry picom file-roller feh awesome kitty nitrogen playerctl pavucontrol ranger rofi rofi-calc rofi-emoji imagemagick breeze breeze-gtk breeze-icons gnome-keyring libsecret polkit lxqt-policykit network-manager-applet volumeicon libimobiledevice udisks2 ntfs-3g noto-fonts noto-fonts-emoji ttf-hack ttf-fira-sans ttf-fira-code ttf-font-awesome ttf-iosevka-nerd ttf-ibm-plex ttf-input zsh starship go rust python2 --noconfirm
+sudo pacman -S xorg-server xorg-xinit xorg-xclipboard xclip xterm stow wget lxappearance qt5ct pcmanfm-qt bluez bluez-utils blueberry picom file-roller feh awesome kitty nitrogen playerctl pavucontrol ranger rofi rofi-calc rofi-emoji imagemagick breeze breeze-gtk breeze-icons gnome-keyring libsecret polkit lxqt-policykit network-manager-applet volumeicon libimobiledevice udisks2 ntfs-3g noto-fonts noto-fonts-emoji ttf-hack ttf-fira-sans ttf-fira-code ttf-font-awesome ttf-iosevka-nerd ttf-ibm-plex ttf-input zsh starship go rust python2 --noconfirm
 
 # dot files
 stow */ --adopt
@@ -33,6 +33,22 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 
 # oh my zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+# install nvm
+nvm_string="nvm-sh/nvm";
+
+git_latest_version() {
+   basename $(curl -fs -o/dev/null -w %{redirect_url} https://github.com/$1/releases/latest)
+}
+
+latest_version_number=$(git_latest_version "${nvm_string}");
+#echo ${latest_version_number}
+wget -qO- https://raw.githubusercontent.com/${nvm_string}/${latest_version_number}/install.sh | bash
+
+
+cd /home/$USER
+rm -rf .zshrc
+rm -rf .zprofile
 
 cd /home/$USER/gurdotfiles/
 
