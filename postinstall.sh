@@ -58,4 +58,6 @@ chsh -s /usr/bin/zsh
 sudo systemctl enable bluetooth.service
 
 
-
+# pacman
+sudo sed -i '/^Color$/a ILoveCandy' /etc/pacman.conf
+sudo sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf

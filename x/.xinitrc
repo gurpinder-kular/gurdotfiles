@@ -11,7 +11,7 @@ export SSH_AUTH_SOCK
 /usr/bin/lxqt-policykit-agent &
 
 # picom
-picom --config ~/.config/picom.conf --experimental-backends &
+#picom --config ~/.config/picom.conf --experimental-backends &
 
 # applets
 nm-applet &
