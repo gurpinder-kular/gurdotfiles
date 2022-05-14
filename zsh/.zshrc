@@ -125,3 +125,6 @@ znap source zsh-users/zsh-syntax-highlighting
 
 # starship
 eval "$(starship init zsh)"
+
+# alias
+alias ytd="yt-dlp"

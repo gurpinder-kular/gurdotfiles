@@ -4,7 +4,7 @@ configuration{
   display-drun: "Applications:";
   display-window: "Windows:";
   drun-display-format: "{name}";
-  modi: "run,drun,window,ssh,calc";
+  modi: "run,drun,window,ssh,calc,emoji";
   lines: 13;
   font: "Recursive Sn Lnr St 11";
   show-icons: false;

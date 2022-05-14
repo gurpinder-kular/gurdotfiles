@@ -4,7 +4,7 @@ git checkout gurlocalbranch
 sudo pacman -Syyu --noconfirm
 echo `##################################`
 echo `Installing TWM env.`
-sudo pacman -S xorg-server xorg-xinit xorg-xclipboard xclip xterm stow wget lxappearance qt5ct pcmanfm-qt bluez bluez-utils blueberry picom file-roller feh awesome kitty nitrogen playerctl pavucontrol ranger rofi rofi-calc rofi-emoji imagemagick breeze breeze-gtk breeze-icons gnome-keyring libsecret polkit lxqt-policykit network-manager-applet volumeicon libimobiledevice udisks2 ntfs-3g noto-fonts noto-fonts-emoji ttf-hack ttf-fira-sans ttf-fira-code ttf-font-awesome ttf-iosevka-nerd ttf-ibm-plex ttf-input zsh starship go rust python2 --noconfirm
+sudo pacman -S xorg-server xorg-xinit xorg-xclipboard xclip xsel copyq xterm stow wget lxappearance qt5ct pcmanfm-qt bluez bluez-utils blueberry picom file-roller feh awesome kitty nitrogen playerctl pavucontrol ranger rofi rofi-calc rofi-emoji imagemagick breeze breeze-gtk breeze-icons gnome-keyring libsecret polkit lxqt-policykit network-manager-applet volumeicon libimobiledevice udisks2 ntfs-3g noto-fonts noto-fonts-emoji ttf-hack ttf-fira-sans ttf-fira-code ttf-font-awesome ttf-iosevka-nerd ttf-ibm-plex ttf-input zsh starship go rust python2 neofetch yt-dlp --noconfirm
 
 # dot files
 stow */ --adopt
