@@ -274,6 +274,13 @@ local netupinfo = lain.widget.net({
 local hlayout = wibox.layout.flex.horizontal();
 hlayout:set_max_widget_size(150)
 
+local rangerwidget = wibox.widget({
+    image  = HOMEDIR .. "/gurdotfiles/ranger.png",
+    resize = true,
+    widget = wibox.widget.imagebox
+})
+rangerwidget:connect_signal("button::press", function() awful.spawn(terminal .. " -e ranger" ) end)
+
 awful.screen.connect_for_each_screen(function(s)
     -- Wallpaper
     --set_wallpaper(s)
@@ -281,7 +288,9 @@ awful.screen.connect_for_each_screen(function(s)
     -- Each screen has its own tag table.P
     local names =   {   "WEB", "CODE", "TERM",
                         "DB", "API", "MAIL", 
-                        "CHAT", "PWD", "MEDIA" }
+                        "CHAT", "PWD", "MEDIA" , 
+                        --"\u{e007}" 
+                    }
     local l = awful.layout.suit  -- Just to save some typing: use an alias.
     local layouts = {   l.tile, l.tile, l.tile, 
                         l.tile, l.tile, l.tile, 
@@ -323,18 +332,14 @@ awful.screen.connect_for_each_screen(function(s)
     -- Add widgets to the wibox
     s.mywibox:setup {
         widget = wibox.container.margin,
-        margins = 4,
+        margins = beautiful.wibar_margin,
         {
             layout = wibox.layout.align.horizontal,
             { -- Left widgets
                 layout = wibox.layout.fixed.horizontal,
                 --mylauncher,
                 {
-                    {
-                        image  = HOMEDIR .. "/gurdotfiles/ranger.png",
-                        resize = true,
-                        widget = wibox.widget.imagebox
-                    },
+                    rangerwidget,
                     right = 5,
                     widget = wibox.container.margin
                 },
@@ -741,6 +746,12 @@ end
 -- Bind all key numbers to tags.
 -- Be careful: we use keycodes to make it work on any keyboard layout.
 -- This should map on the top row of your keyboard, usually 1 to 9.
+
+
+
+
+
+
 for i = 1, 9 do
     globalkeys = gears.table.join(globalkeys,
         -- View tag only.
@@ -795,6 +806,21 @@ for i = 1, 9 do
                   {description = "toggle focused client on tag #" .. i, group = "tag"})
     )
 end
+
+local Alt = "Mod1"
+-- extra tags
+-- for i = 10, 18 do
+--     globalkeys = gears.table.join(globalkeys,
+--         awful.key({ modkey, Alt }, i - 9, function () 
+--             local screen = awful.screen.focused()
+--             local tag = screen.tags[i]
+--             if tag then
+--                tag:view_only()
+--             end
+--         end,
+--     {description = "show main menu", group = "awesome"}) 
+-- )
+-- end
 
 clientbuttons = gears.table.join(
     awful.button({ }, 1, function (c)
