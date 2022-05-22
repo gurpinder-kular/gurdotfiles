@@ -35,6 +35,7 @@ theme.bg_systray    = theme.bg_normal
 
 theme.wibar_type    = 'dock'
 theme.wibar_border_width    = 0
+theme.wibar_margin          = 4
 theme.wibar_border_color =   "#000000" .. "00"
 theme.wibar_height  = 32
 -- theme.wibar_width   = 1200
@@ -44,8 +45,8 @@ theme.fg_focus      = "#ffffff"
 theme.fg_urgent     = "#ffffff"
 theme.fg_minimize   = "#ffffff"
 
-theme.useless_gap   = dpi(4)
-theme.border_width  = dpi(2.6)
+theme.useless_gap   = dpi(0)
+theme.border_width  = dpi(2)
 theme.border_normal = "#000000" .. "00"
 theme.border_focus  = theme.bg_focus
 theme.border_marked = "#91231c"
